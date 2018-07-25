@@ -128,4 +128,11 @@ defined(CONFIG_MX6DL)) && !defined(CONFIG_MX6SOLO)
 
 /* LDO Bypass */
 #define CONFIG_LDO_BYPASS_CHECK
+
+#ifdef CONFIG_IMX_OPTEE
+#define CONFIG_SYS_MEM_TOP_HIDE	SZ_32M
+#define TEE_ENV "tee=yes\0"
+#else
+#define TEE_ENV "tee=no\0"
+#endif
 #endif

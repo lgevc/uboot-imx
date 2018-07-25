@@ -107,4 +107,10 @@
 #define CONFIG_ARMV7_SECURE_BASE	0x00900000
 #endif
 
+#ifdef CONFIG_IMX_OPTEE
+#define CONFIG_SYS_MEM_TOP_HIDE	SZ_32M
+#define TEE_ENV "tee=yes\0"
+#else
+#define TEE_ENV "tee=no\0"
+#endif
 #endif
